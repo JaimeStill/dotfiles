@@ -32,6 +32,8 @@ if [[ ! -f "$HOME/.config/hypr/envs.lua" ]]; then
 LUA
 fi
 
+ln -sf "$repo/config/starship.toml" "$HOME/.config/starship.toml"
+
 ln -sf "$repo/config/alacritty/alacritty.toml" "$HOME/.config/alacritty/alacritty.toml"
 ln -sf "$repo/config/kitty/kitty.conf" "$HOME/.config/kitty/kitty.conf"
 ln -sf "$repo/config/ghostty/config" "$HOME/.config/ghostty/config"
@@ -53,7 +55,7 @@ ln -sf "$repo/config/claude/settings.json" "$HOME/.claude/settings.json"
 
 ln -sf "$repo/gitconfig" "$HOME/.gitconfig"
 ln -sf "$repo/bashrc.local" "$HOME/.bashrc.local"
-grep -qF '.bashrc.local' "$HOME/.bashrc" 2>/dev/null || \
+grep -qF '.bashrc.local' "$HOME/.bashrc" 2>/dev/null ||
   printf '\n[ -f ~/.bashrc.local ] && source ~/.bashrc.local\n' >>"$HOME/.bashrc"
 
 ln -sf "$repo/bin/omarchy-font-size-set" "$HOME/.local/bin/omarchy-font-size-set"
