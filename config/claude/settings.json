@@ -1,0 +1,48 @@
+{
+  "attribution": {
+    "commit": "",
+    "pr": "",
+    "sessionUrl": false
+  },
+  "permissions": {
+    "defaultMode": "plan"
+  },
+  "model": "sonnet",
+  "enabledPlugins": {
+    "frontend-design@claude-plugins-official": true,
+    "skill-creator@claude-plugins-official": true,
+    "claude-md-management@claude-plugins-official": true,
+    "dev-workflow@tau-marketplace": true,
+    "github-cli@tau-marketplace": true,
+    "go-patterns@tau-marketplace": true,
+    "iterative-dev@tau-marketplace": true,
+    "project-management@tau-marketplace": true,
+    "marathon@standards-lab": true,
+    "marathon-roadmap@standards-lab": true
+  },
+  "extraKnownMarketplaces": {
+    "tau-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "tailored-agentic-units/tau-marketplace"
+      }
+    },
+    "standards-lab": {
+      "source": {
+        "source": "github",
+        "repo": "standards-lab/claude-plugins"
+      }
+    }
+  },
+  "alwaysThinkingEnabled": true,
+  "effortLevel": "high",
+  "tui": "fullscreen",
+  "autoMemoryEnabled": false,
+  "autoDreamEnabled": false,
+  "verbose": true,
+  "autoCompactEnabled": true,
+  "switchModelsOnFlag": true,
+  "remoteControlAtStartup": false,
+  "agentPushNotifEnabled": true,
+  "skipAutoPermissionPrompt": true
+}

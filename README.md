@@ -43,6 +43,10 @@ that ever changes.
   engine's source config. `aether/theme/` (rendered per-app output) and the empty `themes/`,
   `custom/` directories aren't tracked — they're generated, not source.
 - `config/mise/config.toml` — tracked language/tool versions.
+- `config/claude/settings.json` — Claude Code preferences (model, permissions, plugins, enabled
+  marketplaces). `~/claude-settings` only covers `CLAUDE.md` and its context-management pieces, not
+  settings, so this lives here instead. `~/.claude/settings.local.json`, if a machine ever has one,
+  stays untracked — that file's meant to be per-machine.
 - `gitconfig` — identity, aliases, credential helpers, and an `includeIf` for `~/s2va/` that swaps
   in a work email for repos under that directory.
 - `bashrc.local` — sourced from `~/.bashrc`. Holds `PATH` additions and Azure CLI aliases.

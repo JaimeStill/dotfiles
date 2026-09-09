@@ -14,7 +14,7 @@ link_dir() {
   ln -sfn "$1" "$2"
 }
 
-mkdir -p "$HOME/.config"/{hypr,alacritty,kitty,ghostty,foot,omarchy/hooks/post-update.d,omarchy/backgrounds,aether,mise} "$HOME/.local/bin" "$HOME/Pictures"
+mkdir -p "$HOME/.config"/{hypr,alacritty,kitty,ghostty,foot,omarchy/hooks/post-update.d,omarchy/backgrounds,aether,mise} "$HOME/.local/bin" "$HOME/Pictures" "$HOME/.claude"
 
 link_dir "$repo/nvim" "$HOME/.config/nvim"
 
@@ -48,6 +48,8 @@ ln -sf "$repo/config/aether/wallhaven.json" "$HOME/.config/aether/wallhaven.json
 link_dir "$repo/config/aether/blueprints" "$HOME/.config/aether/blueprints"
 
 ln -sf "$repo/config/mise/config.toml" "$HOME/.config/mise/config.toml"
+
+ln -sf "$repo/config/claude/settings.json" "$HOME/.claude/settings.json"
 
 ln -sf "$repo/gitconfig" "$HOME/.gitconfig"
 ln -sf "$repo/bashrc.local" "$HOME/.bashrc.local"
