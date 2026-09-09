@@ -11,7 +11,7 @@ o.bind("SUPER + SHIFT + D", "Docker", { tui = "lazydocker" })
 o.bind("SUPER + SHIFT + G", "Signal", { omarchy = "signal" })
 
 -- Replacements for stock preinstalled apps.
-o.bind("SUPER + SHIFT + SLASH", "Passwords", { launch = "enteauth" })
+o.bind("SUPER + SHIFT + SLASH", "Passwords", { launch = "proton-authenticator" })
 
 -- Additions (verified unbound in Quattro defaults).
 o.bind("SUPER + SHIFT + T", "Activity", { tui = "btop" })

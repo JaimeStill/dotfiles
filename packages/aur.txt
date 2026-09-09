@@ -1,3 +1,3 @@
 aseprite
-ente-auth-bin
 google-chrome
+proton-authenticator-bin

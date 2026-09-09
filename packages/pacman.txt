@@ -7,7 +7,6 @@ ccid
 dfu-util
 dotnet-runtime-9.0
 efibootmgr
-ente-auth-bin
 fwupd
 github-cli
 glab
@@ -27,6 +26,7 @@ pandoc-cli
 pcsclite
 pcsc-tools
 presenterm
+proton-authenticator-bin
 python-weasyprint
 qt5-wayland
 resvg
