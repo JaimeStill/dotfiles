@@ -11,8 +11,9 @@ auto_prune = false
 [tools]
 buf = "latest"
 bun = "latest"
-dotnet = "10.0"
+dotnet = "latest"
 go = "latest"
 node = "latest"
+npm = "latest"
 ruby = "latest"
 rust = "latest"
