@@ -21,6 +21,17 @@ link_dir "$repo/nvim" "$HOME/.config/nvim"
 ln -sf "$repo/config/hypr/bindings.lua" "$HOME/.config/hypr/bindings.lua"
 ln -sf "$repo/config/hypr/hyprland.lua" "$HOME/.config/hypr/hyprland.lua"
 
+# hyprland.lua requires hypr.envs for per-machine env vars (GPU driver, cursor
+# theme, etc.) — not tracked here since it doesn't travel between machines.
+# Scaffold an empty one if this machine doesn't have one yet, so the require
+# always resolves; never overwrite one that already exists.
+if [[ ! -f "$HOME/.config/hypr/envs.lua" ]]; then
+  cat >"$HOME/.config/hypr/envs.lua" <<'LUA'
+-- Machine-specific Hyprland env vars. Not tracked in dotfiles.
+-- hl.env("LIBVA_DRIVER_NAME", "iHD")
+LUA
+fi
+
 ln -sf "$repo/config/alacritty/alacritty.toml" "$HOME/.config/alacritty/alacritty.toml"
 ln -sf "$repo/config/kitty/kitty.conf" "$HOME/.config/kitty/kitty.conf"
 ln -sf "$repo/config/ghostty/config" "$HOME/.config/ghostty/config"
@@ -51,5 +62,6 @@ echo "dotfiles deployed."
 echo
 echo "Not automated by this script:"
 echo "  - hypr/monitors.lua: set up per-machine, hardware differs"
+echo "  - hypr/envs.lua: scaffolded empty if missing, fill in this machine's env vars by hand"
 echo "  - packages/{pacman,aur}.txt: review, then install by hand (see README)"
 echo "  - mise install: run it to fetch the tool versions from config/mise/config.toml"

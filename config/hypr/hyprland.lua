@@ -27,4 +27,8 @@ require("default.hypr.toggles")
 
 -- Add any other personal Hyprland configuration below.
 -- o.window("qemu", { workspace = "5" })
-require("hypr.envs")
+--
+-- hypr/envs.lua holds per-machine environment variables and isn't tracked in
+-- dotfiles, same as hypr/monitors.lua. pcall so a machine without one yet
+-- doesn't fail the whole config.
+pcall(require, "hypr.envs")
