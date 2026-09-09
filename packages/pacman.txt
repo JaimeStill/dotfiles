@@ -1,7 +1,6 @@
 aseprite
 aws-cli-v2
 azure-cli
-blesh-git
 brasero
 caligula
 ccid
@@ -9,7 +8,6 @@ dfu-util
 dotnet-runtime-9.0
 efibootmgr
 ente-auth-bin
-firefox
 fwupd
 github-cli
 glab
@@ -18,7 +16,6 @@ gst-libav
 hyprshot
 intel-ucode
 kitty
-kustomize
 libqalculate
 libva-utils
 neovim
