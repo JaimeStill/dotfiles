@@ -1,7 +1,4 @@
-export PATH="$PATH:$HOME/go/bin"
-export PATH="$PATH:$HOME/.dotnet/tools"
 export PATH="$PATH:$HOME/.local/bin"
-export PATH="$PATH:$HOME/.cache/.bun/bin"
 
 alias az-cloud='az cloud set -n AzureCloud'
 alias az-gov='az cloud set -n AzureUSGovernment'
