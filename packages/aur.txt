@@ -1,0 +1,4 @@
+aseprite
+blesh-git
+ente-auth-bin
+google-chrome

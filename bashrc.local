@@ -1,0 +1,9 @@
+export PATH="$PATH:$HOME/go/bin"
+export PATH="$PATH:$HOME/.dotnet/tools"
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.cache/.bun/bin"
+
+alias az-cloud='az cloud set -n AzureCloud'
+alias az-gov='az cloud set -n AzureUSGovernment'
+alias az-gov-test='az account set -n s2va-gov-test'
+alias az-gov-ss='az account set -n s2va-gov-sharedservices'

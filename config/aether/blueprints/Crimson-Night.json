@@ -1,0 +1,46 @@
+{
+  "name": "Crimson Night",
+  "palette": {
+    "colors": [
+      "#0d171f",
+      "#d69990",
+      "#9fcba6",
+      "#bdceac",
+      "#a0aecf",
+      "#cfa8b7",
+      "#90cfcc",
+      "#bdd5bf",
+      "#5f6468",
+      "#feb9ae",
+      "#97df9d",
+      "#c2e19c",
+      "#bfcdf7",
+      "#efc3d6",
+      "#72e4df",
+      "#b9eab9"
+    ],
+    "wallpaper": "/home/jaime/.local/share/aether/wallpapers/wallhaven-kw318d.jpg",
+    "extendedColors": {
+      "accent": "#a0aecf",
+      "cursor": "#bdd5bf",
+      "selection_background": "#bdd5bf",
+      "selection_foreground": "#0d171f"
+    }
+  },
+  "adjustments": {
+    "blackPoint": 0,
+    "brightness": 0,
+    "contrast": 0,
+    "gamma": 1,
+    "highlights": 0,
+    "hueShift": 0,
+    "saturation": 0,
+    "shadows": 0,
+    "temperature": 0,
+    "tint": 0,
+    "vibrance": 0,
+    "whitePoint": 0
+  },
+  "settings": {},
+  "timestamp": 1787948497083
+}

@@ -1,0 +1,22 @@
+#!/bin/bash
+# claude is installed natively (~/.local/share/claude) and codex is
+# intentionally uninstalled. Omarchy migrations occasionally reinstall both as
+# mise-managed tools (omarchy-refresh-applications re-runs install/user/mise.sh).
+# This hook runs after migrations and before omarchy-update-mise's `mise up`,
+# so it can undo any re-adoption before mise reinstalls anything.
+
+for tool in claude codex; do
+  mise unuse -g "$tool" 2>/dev/null
+  rm -rf "$HOME/.local/share/mise/installs/$tool" "$HOME/.local/share/mise/shims/$tool"
+done
+rm -rf "$HOME/.local/share/mise/shims/codex-code-mode-host"
+rm -f "$HOME/.local/bin/codex"
+
+# If a migration replaced the native launcher with a mise wrapper, relink it to
+# the newest native version.
+if grep -q 'mise x' "$HOME/.local/bin/claude" 2>/dev/null; then
+  latest=$(ls -v "$HOME/.local/share/claude/versions" 2>/dev/null | tail -n1)
+  if [[ -n $latest ]]; then
+    ln -sf "$HOME/.local/share/claude/versions/$latest" "$HOME/.local/bin/claude"
+  fi
+fi

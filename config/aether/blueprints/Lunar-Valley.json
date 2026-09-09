@@ -1,0 +1,46 @@
+{
+  "name": "Lunar Valley",
+  "palette": {
+    "colors": [
+      "#121620",
+      "#d597a1",
+      "#9dc1ee",
+      "#f2b3c2",
+      "#98addd",
+      "#d1a4c9",
+      "#9ec5f1",
+      "#bbd0e8",
+      "#616369",
+      "#feb7c3",
+      "#99cdff",
+      "#ffb3cf",
+      "#b7ccff",
+      "#f2bdec",
+      "#99d1ff",
+      "#b7deff"
+    ],
+    "wallpaper": "/home/jaime/.local/share/aether/wallpapers/wallhaven-6k93rq.jpg",
+    "extendedColors": {
+      "accent": "#98addd",
+      "cursor": "#bbd0e8",
+      "selection_background": "#bbd0e8",
+      "selection_foreground": "#121620"
+    }
+  },
+  "adjustments": {
+    "blackPoint": 0,
+    "brightness": 0,
+    "contrast": 0,
+    "gamma": 1,
+    "highlights": 0,
+    "hueShift": 0,
+    "saturation": 0,
+    "shadows": 0,
+    "temperature": 0,
+    "tint": 0,
+    "vibrance": 0,
+    "whitePoint": 0
+  },
+  "settings": {},
+  "timestamp": 1787948365513
+}

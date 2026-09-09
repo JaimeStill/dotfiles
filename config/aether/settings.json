@@ -1,0 +1,28 @@
+{
+  "includeNeovim": true,
+  "includeVscode": false,
+  "includeZed": true,
+  "includedApps": {
+    "alacritty": true,
+    "btop": true,
+    "chromium": true,
+    "foot": true,
+    "ghostty": true,
+    "hyprland": true,
+    "hyprlock": true,
+    "icons": true,
+    "kitty": true,
+    "mako": true,
+    "neovim": true,
+    "swayosd": true,
+    "vencord": true,
+    "walker": true,
+    "warp": true,
+    "waybar": true,
+    "wofi": true,
+    "zed": true,
+    "zellij": true
+  },
+  "selectedNeovimConfig": "",
+  "wallpaperFolder": "/home/jaime/Wallpapers"
+}

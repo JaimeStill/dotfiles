@@ -1,0 +1,56 @@
+#!/bin/bash
+
+# Set the font size across all terminal emulators. Omarchy's own
+# omarchy-font-set patches font family into each terminal config but never
+# touches size — the only trace of size in that script is a hardcoded
+# `:size=9` it forces into foot's config as a side effect of every family
+# change. This mirrors that script's per-config sed approach for size
+# instead, and fixes the foot hardcode by preserving whatever size is passed.
+
+usage() {
+  echo "Usage: omarchy-font-size-set <size>"
+}
+
+font_size="${1:-}"
+
+case "$font_size" in
+  -h|--help)
+    usage
+    exit 0
+    ;;
+  "")
+    usage >&2
+    exit 1
+    ;;
+esac
+
+if ! [[ $font_size =~ ^[0-9]+(\.[0-9]+)?$ ]]; then
+  echo "Font size must be a number."
+  exit 1
+fi
+
+if [[ -f ~/.config/alacritty/alacritty.toml ]]; then
+  sed -i "s/^size = .*/size = $font_size/" ~/.config/alacritty/alacritty.toml
+fi
+
+if [[ -f ~/.config/kitty/kitty.conf ]]; then
+  sed --follow-symlinks -i -E "s/^[[:space:]]*font_size[[:space:]]+.*/font_size $font_size/" ~/.config/kitty/kitty.conf
+  pkill -USR1 kitty
+fi
+
+if [[ -f ~/.config/ghostty/config ]]; then
+  sed -i "s/^font-size = .*/font-size = $font_size/" ~/.config/ghostty/config
+  pkill -SIGUSR2 ghostty
+fi
+
+if [[ -f ~/.config/foot/foot.ini ]]; then
+  sed -i -E "s/^(font=.*):size=[0-9.]+/\1:size=$font_size/" ~/.config/foot/foot.ini
+fi
+
+if pgrep -x ghostty >/dev/null; then
+  omarchy-notification-send -g 󰛖 "You must restart Ghostty to see font size change"
+fi
+
+if pgrep -x foot >/dev/null; then
+  omarchy-notification-send -g 󰛖 "You must restart Foot to see font size change"
+fi

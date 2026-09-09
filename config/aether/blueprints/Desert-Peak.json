@@ -1,0 +1,46 @@
+{
+  "name": "Desert Peak",
+  "palette": {
+    "colors": [
+      "#121620",
+      "#d69a8b",
+      "#e9ae9a",
+      "#f1b99d",
+      "#98adde",
+      "#cca5d0",
+      "#98c7ef",
+      "#e5c6b8",
+      "#616369",
+      "#febaa7",
+      "#ffb18e",
+      "#ffbe8b",
+      "#b7ccff",
+      "#ecbef5",
+      "#8ed4ff",
+      "#ffcbab"
+    ],
+    "wallpaper": "/home/jaime/.local/share/aether/wallpapers/wallhaven-exrqrr.jpg",
+    "extendedColors": {
+      "accent": "#98adde",
+      "cursor": "#e5c6b8",
+      "selection_background": "#e5c6b8",
+      "selection_foreground": "#121620"
+    }
+  },
+  "adjustments": {
+    "blackPoint": 0,
+    "brightness": 0,
+    "contrast": 0,
+    "gamma": 1,
+    "highlights": 0,
+    "hueShift": 0,
+    "saturation": 0,
+    "shadows": 0,
+    "temperature": 0,
+    "tint": 0,
+    "vibrance": 0,
+    "whitePoint": 0
+  },
+  "settings": {},
+  "timestamp": 1787969526175
+}

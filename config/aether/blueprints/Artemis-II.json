@@ -1,0 +1,46 @@
+{
+  "name": "Artemis II",
+  "palette": {
+    "colors": [
+      "#101620",
+      "#c9a098",
+      "#a8bee8",
+      "#e3bfaa",
+      "#95aede",
+      "#c4aac7",
+      "#a7c2f2",
+      "#c2cde9",
+      "#606369",
+      "#efc1b6",
+      "#aac8ff",
+      "#ffc599",
+      "#b3cdff",
+      "#e3c5ea",
+      "#a8ccff",
+      "#c6d8ff"
+    ],
+    "wallpaper": "/home/jaime/dotfiles/wallpapers/artemis-II.jpeg",
+    "extendedColors": {
+      "accent": "#95aede",
+      "cursor": "#c2cde9",
+      "selection_background": "#c2cde9",
+      "selection_foreground": "#101620"
+    }
+  },
+  "adjustments": {
+    "blackPoint": 0,
+    "brightness": 0,
+    "contrast": 0,
+    "gamma": 1,
+    "highlights": 0,
+    "hueShift": 0,
+    "saturation": 0,
+    "shadows": 0,
+    "temperature": 0,
+    "tint": 0,
+    "vibrance": 0,
+    "whitePoint": 0
+  },
+  "settings": {},
+  "timestamp": 1788533862044
+}

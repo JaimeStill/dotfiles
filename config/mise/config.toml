@@ -1,0 +1,18 @@
+[settings]
+idiomatic_version_file_enable_tools = ["ruby"]
+minimum_release_age="0"
+
+[settings.ruby]
+compile = false
+
+[settings.upgrade]
+auto_prune = false
+
+[tools]
+buf = "latest"
+bun = "latest"
+dotnet = "10.0"
+go = "latest"
+node = "latest"
+ruby = "latest"
+rust = "latest"

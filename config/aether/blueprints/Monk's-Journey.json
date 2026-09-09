@@ -1,0 +1,46 @@
+{
+  "name": "Monk's Journey",
+  "palette": {
+    "colors": [
+      "#0d171f",
+      "#abb079",
+      "#b3c5a2",
+      "#c8cc9c",
+      "#8db3d0",
+      "#98b9d2",
+      "#9cc9d9",
+      "#ced1b3",
+      "#5f6468",
+      "#cdd48b",
+      "#b7d892",
+      "#d5dc82",
+      "#aad4f9",
+      "#b2d6f6",
+      "#87dbfb",
+      "#dbe29f"
+    ],
+    "wallpaper": "/home/jaime/dotfiles/wallpapers/monk-statue.jpg",
+    "extendedColors": {
+      "accent": "#8db3d0",
+      "cursor": "#ced1b3",
+      "selection_background": "#ced1b3",
+      "selection_foreground": "#0d171f"
+    }
+  },
+  "adjustments": {
+    "blackPoint": 0,
+    "brightness": 0,
+    "contrast": 0,
+    "gamma": 1,
+    "highlights": 0,
+    "hueShift": 0,
+    "saturation": 0,
+    "shadows": 0,
+    "temperature": 0,
+    "tint": 0,
+    "vibrance": 0,
+    "whitePoint": 0
+  },
+  "settings": {},
+  "timestamp": 1787959635651
+}

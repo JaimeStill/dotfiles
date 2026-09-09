@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+# Deploy dotfiles by symlink into their live config locations. Idempotent; re-run any time.
+set -euo pipefail
+
+repo="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+mkdir -p "$HOME/.config"/{hypr,alacritty,kitty,ghostty,foot,omarchy/hooks/post-update.d,omarchy/backgrounds,aether,mise} "$HOME/.local/bin" "$HOME/Pictures"
+
+ln -sfn "$repo/nvim" "$HOME/.config/nvim"
+
+ln -sf "$repo/config/hypr/bindings.lua" "$HOME/.config/hypr/bindings.lua"
+ln -sf "$repo/config/hypr/hyprland.lua" "$HOME/.config/hypr/hyprland.lua"
+
+ln -sf "$repo/config/alacritty/alacritty.toml" "$HOME/.config/alacritty/alacritty.toml"
+ln -sf "$repo/config/kitty/kitty.conf" "$HOME/.config/kitty/kitty.conf"
+ln -sf "$repo/config/ghostty/config" "$HOME/.config/ghostty/config"
+ln -sf "$repo/config/foot/foot.ini" "$HOME/.config/foot/foot.ini"
+
+ln -sf "$repo/config/omarchy/shell.json" "$HOME/.config/omarchy/shell.json"
+ln -sf "$repo/config/omarchy/hooks/post-update.d/keep-agents-native.hook" \
+  "$HOME/.config/omarchy/hooks/post-update.d/keep-agents-native.hook"
+ln -sfn "$repo/config/omarchy/backgrounds/catppuccin" "$HOME/.config/omarchy/backgrounds/catppuccin"
+
+ln -sf "$repo/config/aether/settings.json" "$HOME/.config/aether/settings.json"
+ln -sf "$repo/config/aether/favorites.json" "$HOME/.config/aether/favorites.json"
+ln -sf "$repo/config/aether/wallhaven.json" "$HOME/.config/aether/wallhaven.json"
+ln -sfn "$repo/config/aether/blueprints" "$HOME/.config/aether/blueprints"
+
+ln -sf "$repo/config/mise/config.toml" "$HOME/.config/mise/config.toml"
+
+ln -sf "$repo/gitconfig" "$HOME/.gitconfig"
+ln -sf "$repo/bashrc.local" "$HOME/.bashrc.local"
+grep -qF '.bashrc.local' "$HOME/.bashrc" 2>/dev/null || \
+  printf '\n[ -f ~/.bashrc.local ] && source ~/.bashrc.local\n' >>"$HOME/.bashrc"
+
+ln -sf "$repo/bin/omarchy-font-size-set" "$HOME/.local/bin/omarchy-font-size-set"
+
+ln -sfn "$repo/wallpapers" "$HOME/Pictures/wallpapers"
+
+echo "dotfiles deployed."
+echo
+echo "Not automated by this script:"
+echo "  - hypr/monitors.lua: set up per-machine, hardware differs"
+echo "  - packages/{pacman,aur}.txt: review, then install by hand (see README)"
+echo "  - mise install: run it to fetch the tool versions from config/mise/config.toml"

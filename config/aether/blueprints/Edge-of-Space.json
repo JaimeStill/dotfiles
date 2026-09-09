@@ -1,0 +1,46 @@
+{
+  "name": "Edge of Space",
+  "palette": {
+    "colors": [
+      "#1a1b26",
+      "#f7768e",
+      "#9ece6a",
+      "#e0af68",
+      "#7aa2f7",
+      "#bb9af7",
+      "#7dcfff",
+      "#a9b1d6",
+      "#414868",
+      "#f7768e",
+      "#9ece6a",
+      "#e0af68",
+      "#7aa2f7",
+      "#bb9af7",
+      "#7dcfff",
+      "#c0caf5"
+    ],
+    "wallpaper": "/home/jaime/.local/share/aether/wallpapers/wallhaven-571998.png",
+    "extendedColors": {
+      "accent": "#7aa2f7",
+      "cursor": "#a9b1d6",
+      "selection_background": "#a9b1d6",
+      "selection_foreground": "#1a1b26"
+    }
+  },
+  "adjustments": {
+    "blackPoint": 0,
+    "brightness": 0,
+    "contrast": 0,
+    "gamma": 1,
+    "highlights": 0,
+    "hueShift": 0,
+    "saturation": 0,
+    "shadows": 0,
+    "temperature": 0,
+    "tint": 0,
+    "vibrance": 0,
+    "whitePoint": 0
+  },
+  "settings": {},
+  "timestamp": 1788280561872
+}
