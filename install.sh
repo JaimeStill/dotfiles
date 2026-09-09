@@ -63,5 +63,5 @@ echo
 echo "Not automated by this script:"
 echo "  - hypr/monitors.lua: set up per-machine, hardware differs"
 echo "  - hypr/envs.lua: scaffolded empty if missing, fill in this machine's env vars by hand"
-echo "  - packages/{pacman,aur}.txt: review, then install by hand (see README)"
-echo "  - mise install: run it to fetch the tool versions from config/mise/config.toml"
+echo "  - packages/install-packages.sh: installs the curated pacman/AUR package set"
+echo "  - mise install, then packages/install-go-tools.sh: tool versions + go install targets"
