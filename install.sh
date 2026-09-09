@@ -4,9 +4,19 @@ set -euo pipefail
 
 repo="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
+# ln -sfn silently drops the symlink *inside* an existing real (non-symlink)
+# directory instead of replacing it, so directory targets need the real
+# directory removed first.
+link_dir() {
+  if [[ -d $2 && ! -L $2 ]]; then
+    rm -rf "$2"
+  fi
+  ln -sfn "$1" "$2"
+}
+
 mkdir -p "$HOME/.config"/{hypr,alacritty,kitty,ghostty,foot,omarchy/hooks/post-update.d,omarchy/backgrounds,aether,mise} "$HOME/.local/bin" "$HOME/Pictures"
 
-ln -sfn "$repo/nvim" "$HOME/.config/nvim"
+link_dir "$repo/nvim" "$HOME/.config/nvim"
 
 ln -sf "$repo/config/hypr/bindings.lua" "$HOME/.config/hypr/bindings.lua"
 ln -sf "$repo/config/hypr/hyprland.lua" "$HOME/.config/hypr/hyprland.lua"
@@ -19,12 +29,12 @@ ln -sf "$repo/config/foot/foot.ini" "$HOME/.config/foot/foot.ini"
 ln -sf "$repo/config/omarchy/shell.json" "$HOME/.config/omarchy/shell.json"
 ln -sf "$repo/config/omarchy/hooks/post-update.d/keep-agents-native.hook" \
   "$HOME/.config/omarchy/hooks/post-update.d/keep-agents-native.hook"
-ln -sfn "$repo/config/omarchy/backgrounds/catppuccin" "$HOME/.config/omarchy/backgrounds/catppuccin"
+link_dir "$repo/config/omarchy/backgrounds/catppuccin" "$HOME/.config/omarchy/backgrounds/catppuccin"
 
 ln -sf "$repo/config/aether/settings.json" "$HOME/.config/aether/settings.json"
 ln -sf "$repo/config/aether/favorites.json" "$HOME/.config/aether/favorites.json"
 ln -sf "$repo/config/aether/wallhaven.json" "$HOME/.config/aether/wallhaven.json"
-ln -sfn "$repo/config/aether/blueprints" "$HOME/.config/aether/blueprints"
+link_dir "$repo/config/aether/blueprints" "$HOME/.config/aether/blueprints"
 
 ln -sf "$repo/config/mise/config.toml" "$HOME/.config/mise/config.toml"
 
@@ -35,7 +45,7 @@ grep -qF '.bashrc.local' "$HOME/.bashrc" 2>/dev/null || \
 
 ln -sf "$repo/bin/omarchy-font-size-set" "$HOME/.local/bin/omarchy-font-size-set"
 
-ln -sfn "$repo/wallpapers" "$HOME/Pictures/wallpapers"
+link_dir "$repo/wallpapers" "$HOME/Pictures/wallpapers"
 
 echo "dotfiles deployed."
 echo
