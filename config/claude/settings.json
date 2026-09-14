@@ -15,7 +15,8 @@
     "github-cli@tau-marketplace": true,
     "project-management@tau-marketplace": true,
     "marathon@standards-lab": true,
-    "marathon-roadmap@standards-lab": true
+    "marathon-roadmap@standards-lab": true,
+    "marathon-architecture@standards-lab": true
   },
   "extraKnownMarketplaces": {
     "tau-marketplace": {
