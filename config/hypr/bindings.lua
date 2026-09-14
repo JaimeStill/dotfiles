@@ -9,6 +9,7 @@ o.bind("SUPER + SHIFT + M", "Music", { omarchy = "spotify" })
 o.bind("SUPER + SHIFT + ALT + M", "Music TUI", { tui = "cliamp", focus = true })
 o.bind("SUPER + SHIFT + D", "Docker", { tui = "lazydocker" })
 o.bind("SUPER + SHIFT + G", "Signal", { omarchy = "signal" })
+o.bind("SUPER + SHIFT + K", "Kitty session", "omarchy-kitty-goto-session")
 
 -- Replacements for stock preinstalled apps.
 o.bind("SUPER + SHIFT + SLASH", "Passwords", { launch = "proton-authenticator" })

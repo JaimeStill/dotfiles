@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Load ~/.config/kitty/session.conf into the focused kitty OS window via
+# goto_session, or open it in a new kitty window if no kitty window is
+# focused. kitty's remote-control socket path is keyed by the terminal's
+# pid (see kitty.conf's listen_on), so the focused window's pid has to be
+# resolved the same way omarchy-cmd-terminal-cwd does before the socket can
+# be reached.
+
+session="$HOME/.config/kitty/session.conf"
+
+terminal_pid=$(hyprctl activewindow | awk '/pid:/ {print $2}')
+kitty_socket="$XDG_RUNTIME_DIR/omarchy-kitty-$terminal_pid"
+
+if [[ -S $kitty_socket ]]; then
+  exec kitten @ --to "unix:$kitty_socket" action goto_session "$session"
+fi
+
+exec setsid uwsm-app -- kitty --session "$session"
