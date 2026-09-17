@@ -20,6 +20,7 @@ link_dir "$repo/nvim" "$HOME/.config/nvim"
 
 ln -sf "$repo/config/hypr/bindings.lua" "$HOME/.config/hypr/bindings.lua"
 ln -sf "$repo/config/hypr/hyprland.lua" "$HOME/.config/hypr/hyprland.lua"
+ln -sf "$repo/config/hypr/looknfeel.lua" "$HOME/.config/hypr/looknfeel.lua"
 
 # hyprland.lua requires hypr.envs for per-machine env vars (GPU driver, cursor
 # theme, etc.) — not tracked here since it doesn't travel between machines.
