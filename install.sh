@@ -36,7 +36,6 @@ ln -sf "$repo/config/starship.toml" "$HOME/.config/starship.toml"
 
 ln -sf "$repo/config/alacritty/alacritty.toml" "$HOME/.config/alacritty/alacritty.toml"
 ln -sf "$repo/config/kitty/kitty.conf" "$HOME/.config/kitty/kitty.conf"
-ln -sf "$repo/config/kitty/session.conf" "$HOME/.config/kitty/session.conf"
 ln -sf "$repo/config/ghostty/config" "$HOME/.config/ghostty/config"
 ln -sf "$repo/config/foot/foot.ini" "$HOME/.config/foot/foot.ini"
 
@@ -60,7 +59,6 @@ grep -qF '.bashrc.local' "$HOME/.bashrc" 2>/dev/null ||
   printf '\n[ -f ~/.bashrc.local ] && source ~/.bashrc.local\n' >>"$HOME/.bashrc"
 
 ln -sf "$repo/bin/omarchy-font-size-set" "$HOME/.local/bin/omarchy-font-size-set"
-ln -sf "$repo/bin/omarchy-kitty-goto-session" "$HOME/.local/bin/omarchy-kitty-goto-session"
 
 link_dir "$repo/wallpapers" "$HOME/Pictures/wallpapers"
 
