@@ -47,6 +47,10 @@ that ever changes.
   marketplaces). `~/claude-settings` only covers `CLAUDE.md` and its context-management pieces, not
   settings, so this lives here instead. `~/.claude/settings.local.json`, if a machine ever has one,
   stays untracked — that file's meant to be per-machine.
+- `config/spotify-flags.conf` — runs Spotify natively on Wayland instead of through Xwayland
+  (read by the `/usr/bin/spotify` wrapper). Sharper under fractional scaling, and Spotify keeps
+  launching even if the Xwayland socket in `/tmp/.X11-unix/` disappears, which otherwise makes it
+  exit silently.
 - `gitconfig` — identity, aliases, credential helpers, and an `includeIf` for `~/s2va/` that swaps
   in a work email for repos under that directory.
 - `bashrc.local` — sourced from `~/.bashrc`. Holds `PATH` additions and Azure CLI aliases.

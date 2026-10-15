@@ -34,6 +34,7 @@ LUA
 fi
 
 ln -sf "$repo/config/starship.toml" "$HOME/.config/starship.toml"
+ln -sf "$repo/config/spotify-flags.conf" "$HOME/.config/spotify-flags.conf"
 
 ln -sf "$repo/config/alacritty/alacritty.toml" "$HOME/.config/alacritty/alacritty.toml"
 ln -sf "$repo/config/kitty/kitty.conf" "$HOME/.config/kitty/kitty.conf"
