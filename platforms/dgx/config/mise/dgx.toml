@@ -1,0 +1,18 @@
+# DGX OS dev tools, loaded alongside the shared config/mise/config.toml from mise's conf.d.
+# On Omarchy these come from pacman, so they're kept out of the shared config.
+[tools]
+bat = "latest"
+btop = "latest"
+eza = "latest"
+fastfetch = "latest"
+fd = "latest"
+fzf = "latest"
+gh = "latest"
+lazydocker = "latest"
+lazygit = "latest"
+neovim = "latest"
+ripgrep = "latest"
+starship = "latest"
+tmux = "latest"
+tree-sitter = "latest"
+zoxide = "latest"

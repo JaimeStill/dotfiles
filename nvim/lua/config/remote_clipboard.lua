@@ -3,7 +3,7 @@
 -- rebroadcast to every attached client, local or SSH). Paste prefers the
 -- local Wayland clipboard when one is available, so content copied in other
 -- apps remains pasteable; without a display, paste is an OSC 52 query that
--- tmux (or the terminal) answers.
+-- tmux answers, or Neovim's own last yank outside tmux.
 local M = {}
 
 local function proc_lines(pid, file)
@@ -54,10 +54,15 @@ function M.setup()
     and vim.fn.executable("wl-copy") == 1
     and vim.fn.executable("wl-paste") == 1
 
+  -- Last copy per register, for pasting outside tmux (see paste below).
+  local copied = {}
+
   local function copy(register)
     local emit = osc52.copy(register)
 
-    return function(lines)
+    return function(lines, regtype)
+      copied[register] = { lines, regtype }
+
       if has_wayland then
         local cmd = { "wl-copy", "--sensitive", "--type", "text/plain" }
         if register == "*" then
@@ -74,7 +79,16 @@ function M.setup()
 
   local function paste(register)
     if not has_wayland then
-      return osc52.paste(register)
+      -- tmux answers an OSC 52 query from its own buffer. Outside tmux the query goes to the
+      -- terminal, which prompts (kitty) or stalls on every p, so paste Neovim's last yank instead;
+      -- text from the local machine comes in through the terminal's own paste.
+      if in_tmux then
+        return osc52.paste(register)
+      end
+
+      return function()
+        return copied[register] or { {}, "v" }
+      end
     end
 
     return function()

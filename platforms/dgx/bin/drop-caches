@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Flush the page cache before loading a large model. On the GB10's unified memory, CUDA's
+# cudaMemGetInfo counts reclaimable page cache as used, so tools like vLLM can underestimate
+# free memory after heavy file I/O. NVIDIA documents dropping caches as the workaround.
+set -euo pipefail
+
+free -g | head -2
+sudo sh -c 'sync; echo 3 > /proc/sys/vm/drop_caches'
+echo "Page cache dropped."
+free -g | head -2

@@ -1,0 +1,12 @@
+# Adapted from basecamp/omarchy default/bash/init (commit 087f73d, 2026-10-20). Re-sync by hand when Omarchy changes it.
+# mise and starship are started by platforms/dgx/bashrc; try and Omarchy's completions are
+# Omarchy-only.
+
+if command -v zoxide &> /dev/null; then
+  eval "$(zoxide init bash)"
+fi
+
+# mise's fzf ships only the binary, so take the key bindings (Ctrl-R, Ctrl-T, Alt-C) from it.
+if command -v fzf &> /dev/null; then
+  eval "$(fzf --bash)"
+fi

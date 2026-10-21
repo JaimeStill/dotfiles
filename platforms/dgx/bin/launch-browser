@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Open URLs in the default browser, detached from the calling terminal. gh (and other CLIs that
+# honor BROWSER) wait for the launcher to exit before carrying on, which hangs `gh auth login` when
+# the browser stays in the foreground. DGX OS counterpart of Omarchy's omarchy-launch-browser.
+setsid -f xdg-open "$@" >/dev/null 2>&1

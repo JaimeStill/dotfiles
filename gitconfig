@@ -12,12 +12,12 @@
 	email = jpstill85@gmail.com
 [credential "https://github.com"]
 	helper = 
-	helper = !/usr/bin/gh auth git-credential
+	helper = !gh auth git-credential
 [credential "https://gist.github.com"]
 	helper = 
-	helper = !/usr/bin/gh auth git-credential
+	helper = !gh auth git-credential
 [includeIf "gitdir:~/s2va/"]
   path = ~/s2va/.gitconfig
 [credential "https://gitlab.com"]
 	helper = 
-	helper = !/usr/bin/glab auth git-credential
+	helper = !glab auth git-credential

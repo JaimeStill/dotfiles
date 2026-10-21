@@ -1,0 +1,25 @@
+# Adapted from basecamp/omarchy default/bash/envs (commit 087f73d, 2026-10-20). Re-sync by hand when Omarchy changes it.
+# Omarchy-only pieces (OMARCHY_PATH bootstrap, omarchy-launch-editor/-browser) swapped for their
+# DGX OS equivalents; PATH is handled by platforms/dgx/env.sh.
+
+# Editor used by CLI
+export EDITOR="${EDITOR:-nvim}"
+export SUDO_EDITOR="$EDITOR"
+
+# Used by terminal programs (like gh) to open URLs detached from the terminal
+# process tree. Shell-scoped on purpose: exporting BROWSER session-wide makes
+# xdg-settings refuse to change the default browser.
+export BROWSER="${BROWSER:-launch-browser}"
+export BAT_THEME=ansi
+
+# Color man pages with bat
+export MANROFFOPT="-c"
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
+# Bash started by SSH or herdr's remote bridge can land in the C locale, where
+# printf emits \u/\U escapes literally instead of the character.
+if [ -z "${LANG:-}" ]; then
+  [ -r /etc/default/locale ] && . /etc/default/locale
+  LANG="${LANG:-C.UTF-8}"
+  export LANG
+fi

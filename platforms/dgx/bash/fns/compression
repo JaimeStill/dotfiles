@@ -1,0 +1,5 @@
+# From basecamp/omarchy default/bash/fns/compression (commit 087f73d, 2026-10-20). Unchanged; re-sync by hand when Omarchy changes it.
+
+# Compression
+compress() { tar -czf "${1%/}.tar.gz" "${1%/}"; }
+alias decompress="tar -xzf"

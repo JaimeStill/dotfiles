@@ -1,0 +1,18 @@
+# Interactive shell setup on DGX OS, mirroring Omarchy's bash rc chain (Omarchy's own bashrc
+# already does all of this, so it's sourced from ~/.bashrc only on DGX OS).
+dgx_bash=~/dotfiles/platforms/dgx/bash
+
+eval "$(mise activate bash)"
+
+source "$dgx_bash/envs"
+source "$dgx_bash/shell"
+source "$dgx_bash/aliases"
+for f in "$dgx_bash"/fns/*; do source "$f"; done
+source "$dgx_bash/init"
+
+if [[ $- == *i* ]] && [[ ${TERM:-} != "dumb" ]]; then
+  eval "$(starship init bash --print-full-init)"
+  bind -f "$dgx_bash/inputrc"
+fi
+
+unset dgx_bash f
