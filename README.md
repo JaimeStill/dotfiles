@@ -21,8 +21,7 @@ platform lives under `platforms/<platform>/` and is only ever applied there.
 **Themes.** The shared nvim and kitty configs load their theme from `~/.local/state/dotfiles/theme/`.
 Each platform points that at its own source: Omarchy at its live theme
 (`~/.local/state/omarchy/current/theme`, so theme switches and nvim hot-reload keep working), DGX OS
-at the fixed theme in `platforms/dgx/theme/` (the Noctis Obscuro palette, Neovim's built-in
-`default`). Keep shared files free of platform paths; route through an indirection like this one
+at the fixed theme in `platforms/dgx/theme/` (Noctis Obscuro in both kitty and Neovim). Keep shared files free of platform paths; route through an indirection like this one
 instead.
 
 **Platform overlays.** Where a shared config needs a per-platform setting, it includes a file that
@@ -243,8 +242,9 @@ DGX OS (`platforms/dgx/`):
   and last package change in place of the Omarchy-only commands.
 - `config/kitty/platform.conf` — keeps kitty's title bar (GNOME doesn't tile).
 - `theme/{neovim.lua,kitty.conf}` — fixed theme. `kitty.conf` is the
-  [Noctis Obscuro](https://terminalcolors.com/themes/noctis/obscuro/) palette; Neovim uses its
-  built-in `default` colorscheme, with kitty's background showing through.
+  [Noctis Obscuro](https://terminalcolors.com/themes/noctis/obscuro/) palette; `neovim.lua` loads
+  `noctis_obscuro` from [talha-akram/noctis.nvim](https://github.com/talha-akram/noctis.nvim), a
+  port of the Noctis editor theme, with kitty's background showing through.
 - `bin/drop-caches` — page cache flush (see GPU memory above).
 
 ## What's deliberately not tracked
