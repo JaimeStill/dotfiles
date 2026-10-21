@@ -90,9 +90,12 @@ curl -fsSLO https://raw.githubusercontent.com/NVIDIA/dgx-spark-playbooks/main/nv
 bash ./discover-sparks
 ssh gb10-2-qsfp hostname
 
-# RDMA bandwidth over the link; expect close to 200 Gb/s.
-ib_write_bw -d rocep1s0f0 --report_gbits                # on gb10-2 (server)
-ib_write_bw -d rocep1s0f0 --report_gbits gb10-2-qsfp    # on gb10-1 (client)
+# RDMA bandwidth. Each logical interface is one PCIe half of the port and tops out near 100 Gb/s
+# (~108 alone), so test both halves at once; together they should reach ~185 Gb/s. NCCL uses both.
+ib_write_bw -d rocep1s0f0   -p 18515 -D 10 --report_gbits &                  # on gb10-2 (servers)
+ib_write_bw -d roceP2p1s0f0 -p 18516 -D 10 --report_gbits &
+ib_write_bw -d rocep1s0f0   -p 18515 -D 10 --report_gbits 192.168.100.11 &   # on gb10-1 (clients)
+ib_write_bw -d roceP2p1s0f0 -p 18516 -D 10 --report_gbits 192.168.101.11 &
 ```
 
 Keep both nodes on the same DGX OS version (driver/CUDA/NCCL mismatches break multi-node runs).
