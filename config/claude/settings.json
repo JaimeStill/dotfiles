@@ -48,11 +48,11 @@
   "tui": "fullscreen",
   "autoMemoryEnabled": false,
   "autoDreamEnabled": false,
-  "verbose": true,
+  "verbose": false,
   "autoCompactEnabled": true,
+  "idleCompaction": false,
   "switchModelsOnFlag": true,
   "remoteControlAtStartup": false,
   "agentPushNotifEnabled": true,
-  "skipAutoPermissionPrompt": true,
-  "idleCompaction": false
+  "skipAutoPermissionPrompt": true
 }
