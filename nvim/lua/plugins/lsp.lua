@@ -10,4 +10,14 @@ return {
       })
     end,
   },
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      servers = {
+        gopls = {
+          mason = false, -- use the gopls on PATH (mise), and don't let LazyVim reinstall it via Mason
+        },
+      },
+    },
+  },
 }
