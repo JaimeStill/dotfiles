@@ -12,6 +12,14 @@ done
 rm -rf "$HOME/.local/share/mise/shims/codex-code-mode-host"
 rm -f "$HOME/.local/bin/codex"
 
+# Omarchy 4.5 declares both in /etc/mise/conf.d/omarchy-tools.toml. The mise
+# config's disable_tools keeps them inactive, but copies installed under their
+# backend names (e.g. aqua:anthropics/claude-code) still get shims on reshim.
+mise ls --installed 2>/dev/null |
+  awk '$1 ~ /(^|[:\/])(claude|claude-code|codex)$/ { print $1 "@" $2 }' |
+  xargs -r mise uninstall 2>/dev/null
+rm -f "$HOME/.local/share/mise/shims/claude" "$HOME/.local/share/mise/shims/codex"
+
 # If a migration replaced the native launcher with a mise wrapper, relink it to
 # the newest native version.
 if grep -q 'mise x' "$HOME/.local/bin/claude" 2>/dev/null; then

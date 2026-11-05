@@ -1,6 +1,9 @@
 [settings]
 idiomatic_version_file_enable_tools = ["ruby"]
 minimum_release_age="0"
+# Omarchy 4.5 declares claude and codex in /etc/mise/conf.d/omarchy-tools.toml;
+# claude stays native (~/.local/share/claude) and codex stays uninstalled.
+disable_tools = ["claude", "codex"]
 
 [settings.ruby]
 compile = false
