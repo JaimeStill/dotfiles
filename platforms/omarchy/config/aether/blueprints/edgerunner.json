@@ -1,0 +1,46 @@
+{
+  "name": "edgerunner",
+  "palette": {
+    "colors": [
+      "#1e1216",
+      "#c8a097",
+      "#bcc48f",
+      "#cacc93",
+      "#9aafd1",
+      "#c8a9c3",
+      "#9bcbce",
+      "#cfd1b3",
+      "#686163",
+      "#eec1b5",
+      "#c7d574",
+      "#d8dc75",
+      "#b9cffa",
+      "#e8c4e5",
+      "#81e0e6",
+      "#dde19f"
+    ],
+    "wallpaper": "/home/jaime/.local/share/aether/wallpapers/wallhaven-571998.png",
+    "extendedColors": {
+      "accent": "#9aafd1",
+      "cursor": "#cfd1b3",
+      "selection_background": "#cfd1b3",
+      "selection_foreground": "#1e1216"
+    }
+  },
+  "adjustments": {
+    "blackPoint": 0,
+    "brightness": 0,
+    "contrast": 0,
+    "gamma": 1,
+    "highlights": 0,
+    "hueShift": 0,
+    "saturation": 0,
+    "shadows": 0,
+    "temperature": 0,
+    "tint": 0,
+    "vibrance": 0,
+    "whitePoint": 0
+  },
+  "settings": {},
+  "timestamp": 1793713446307
+}
