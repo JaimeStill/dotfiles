@@ -6,16 +6,15 @@ minimum_release_age="0"
 compile = false
 
 [settings.upgrade]
-auto_prune = false
 
 [tools]
 buf = "latest"
 bun = "latest"
 dotnet = "latest"
 go = "latest"
+hyperfine = "latest"
 node = "latest"
 npm = "latest"
-opencode = "latest"
 pi = "latest"
 pnpm = "latest"
 ruby = "latest"
