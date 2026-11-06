@@ -58,24 +58,29 @@
           "id": "omarchy.elsewhen",
           "cities": [
             {
-              "name": "Eastern",
-              "zone": "US/Eastern"
+              "name": "Fayetteville",
+              "zone": "America/New_York",
+              "lat": 35.05266,
+              "lon": -78.87836,
+              "region": "North Carolina, US"
             },
             {
-              "name": "London",
-              "zone": "Europe/London"
+              "name": "Dallas",
+              "zone": "America/Chicago",
+              "lat": 32.78306,
+              "lon": -96.80667,
+              "region": "Texas, US"
             },
             {
-              "name": "Dubai",
-              "zone": "Asia/Dubai"
+              "name": "Denver",
+              "zone": "America/Denver"
             },
             {
-              "name": "Tokyo",
-              "zone": "Asia/Tokyo"
-            },
-            {
-              "name": "Los Angeles",
-              "zone": "America/Los_Angeles"
+              "name": "Bangkok",
+              "zone": "Asia/Bangkok",
+              "lat": 13.75398,
+              "lon": 100.50144,
+              "region": "TH"
             }
           ]
         },
