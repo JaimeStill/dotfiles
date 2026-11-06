@@ -96,7 +96,8 @@
   },
   "plugins": [],
   "version": 1,
-  "disabledPlugins": [
-    "omarchy.dock"
-  ]
+  "disabledPlugins": [],
+  "dock": {
+    "autohide": true
+  }
 }

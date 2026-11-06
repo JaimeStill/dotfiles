@@ -16,16 +16,12 @@ o.bind("SUPER + SHIFT + SLASH", "Passwords", { launch = "proton-authenticator" }
 -- Additions. o.rebind only exists from Omarchy 4.5 on, so it tells the two
 -- apart and the same file works on machines on either side of the update.
 if o.rebind then
-  -- 4.5+: tiling only, no dock.
-  -- Super + L cycles tiling <-> scrolling and never floating (stock: also floating).
-  o.rebind("SUPER + L", "Cycle tiling/scrolling layout", "omarchy-workspace-layout-tiling-toggle")
+  -- 4.5+: stock Super + L (tiling -> scrolling -> floating), stock Super + M
+  -- (minimize to the dock) and stock Super + Alt + Space (Apps grid, served by
+  -- the dock plugin, so omarchy.dock must stay enabled in shell.json).
   -- Stock Super + Alt + L cycles the layout back; keep it for moving workspaces.
   o.rebind("SUPER + ALT + L", "Move workspace to right monitor", o.workspaces.move_to_monitor("r"))
   o.bind("SUPER + ALT + H", "Move workspace to left monitor", o.workspaces.move_to_monitor("l"))
-  -- Stock opens the Apps grid from the dock, which is disabled in shell.json.
-  o.rebind("SUPER + ALT + SPACE", "Apps menu", "omarchy-menu toggle apps")
-  -- Minimize to the dock; does nothing without floating workspaces.
-  hl.unbind("SUPER + M")
   -- Super + Shift + T (Activity, btop) is a stock binding from 4.5 on.
 else
   -- 4.0.x (verified unbound in Quattro defaults).

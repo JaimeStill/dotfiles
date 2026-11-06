@@ -49,7 +49,8 @@ ln -sf "$config/aether/wallhaven.json" "$HOME/.config/aether/wallhaven.json"
 link_dir "$config/aether/blueprints" "$HOME/.config/aether/blueprints"
 
 ln -sf "$platform_dir/bin/omarchy-font-size-set" "$HOME/.local/bin/omarchy-font-size-set"
-ln -sf "$platform_dir/bin/omarchy-workspace-layout-tiling-toggle" "$HOME/.local/bin/omarchy-workspace-layout-tiling-toggle"
+# Retired: Super + L uses the stock layout toggle again (floating included).
+rm -f "$HOME/.local/bin/omarchy-workspace-layout-tiling-toggle"
 
 echo "Omarchy dotfiles deployed."
 echo
