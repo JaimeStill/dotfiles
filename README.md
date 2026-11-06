@@ -187,8 +187,6 @@ Shared:
   symlinks to it. Two Aether blueprints (Artemis-II, Monk's Journey) reference files here directly.
 - `packages/{go-tools.txt,install-go-tools.sh}` — `go install` targets that aren't mise-managed
   tools themselves (`gopls`, `gonew`).
-- `keyboards/keychron-k2-he/` — Keychron Launcher exports (keymap and Hall effect profile) of the
-  K2 HE's configuration, for restoring onto another K2 HE. Restore steps in its README.
 
 Omarchy (`platforms/omarchy/`):
 
