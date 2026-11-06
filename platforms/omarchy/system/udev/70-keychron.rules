@@ -1,0 +1,11 @@
+# Keychron keyboards: let Keychron Launcher (launcher.keychron.com, WebHID in Chrome/Chromium)
+# configure them and flash firmware without root. uaccess grants the logged-in seat user access;
+# the rule must sort before 73-seat-late.rules, hence the 70- prefix.
+
+# Normal mode (vendor 3434 covers every Keychron board, including the K2 HE at 3434:0e20).
+KERNEL=="hidraw*", ATTRS{idVendor}=="3434", TAG+="uaccess"
+
+# Bootloader (DFU) mode, for firmware updates. Keychron boards use one of these two; check
+# `lsusb` with the board in bootloader mode if an update can't find the device.
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="df11", TAG+="uaccess"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="342d", ATTRS{idProduct}=="dfa0", TAG+="uaccess"

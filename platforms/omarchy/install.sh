@@ -57,5 +57,6 @@ echo
 echo "Not automated by this script:"
 echo "  - hypr/monitors.lua: set up per-machine, hardware differs"
 echo "  - hypr/envs.lua: scaffolded empty if missing, fill in this machine's env vars by hand"
+echo "  - sudo platforms/omarchy/system-setup.sh: udev rules (Keychron Launcher access)"
 echo "  - platforms/omarchy/packages/install-packages.sh: installs the curated pacman/AUR package set"
 echo "  - mise install, then packages/install-go-tools.sh: tool versions + go install targets"

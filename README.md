@@ -44,6 +44,8 @@ title bar under GNOME for moving and resizing windows.
 6. Set up `~/.config/hypr/monitors.lua` by hand for the new machine's actual displays, and fill in
    `~/.config/hypr/envs.lua` (scaffolded empty by `install.sh`) with whatever this machine needs
    (see below).
+7. Run `sudo platforms/omarchy/system-setup.sh` — installs the udev rules in
+   `platforms/omarchy/system/udev/` into `/etc/udev/rules.d` and reloads udev. Idempotent.
 
 ## Restoring on a DGX OS machine (GB10)
 
@@ -185,6 +187,8 @@ Shared:
   symlinks to it. Two Aether blueprints (Artemis-II, Monk's Journey) reference files here directly.
 - `packages/{go-tools.txt,install-go-tools.sh}` — `go install` targets that aren't mise-managed
   tools themselves (`gopls`, `gonew`).
+- `keyboards/keychron-k2-he/` — Keychron Launcher exports (keymap and Hall effect profile) of the
+  K2 HE's configuration, for restoring onto another K2 HE. Restore steps in its README.
 
 Omarchy (`platforms/omarchy/`):
 
@@ -211,6 +215,11 @@ Omarchy (`platforms/omarchy/`):
   `omarchy-font-set` handles font *family* globally but never size (the only trace is a hardcoded,
   buggy `:size=9` it forces into foot's config as a side effect); this applies the same
   sed-per-config-file approach to size instead.
+- `system/udev/70-keychron.rules`, installed by `system-setup.sh` — lets Keychron Launcher
+  (launcher.keychron.com, WebHID in Chrome) configure Keychron keyboards and flash their firmware
+  without root, in both normal and bootloader (DFU) mode. `dfu-util` in the package set is the
+  command-line fallback if a browser firmware update fails. Copied into `/etc`, not symlinked,
+  since udev can read rules before `/home` is mounted.
 - `packages/{pacman.txt,aur.txt}` — the curated set of software to install beyond stock Omarchy,
   hand-reviewed rather than a raw diff of everything explicitly installed on any one machine.
   `install-packages.sh` installs them through Omarchy's own CLI. `audit-installed.sh` prints what's

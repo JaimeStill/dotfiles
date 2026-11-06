@@ -19,6 +19,6 @@ omarchy install font 'Cascadia Mono' ttf-cascadia-mono-nerd 'CaskaydiaMono Nerd 
 omarchy-pkg-aur-add proton-authenticator-bin
 
 # No dedicated install group; official repo packages via the generic helper.
-omarchy-pkg-add aws-cli-v2 azure-cli caligula github-cli glab pandoc-cli presenterm typst yazi
+omarchy-pkg-add aws-cli-v2 azure-cli caligula dfu-util github-cli glab pandoc-cli presenterm typst yazi
 
 echo "Package install complete."
