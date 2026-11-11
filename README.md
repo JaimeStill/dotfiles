@@ -45,7 +45,9 @@ title bar under GNOME for moving and resizing windows.
    `~/.config/hypr/envs.lua` (scaffolded empty by `install.sh`) with whatever this machine needs
    (see below).
 7. Run `sudo platforms/omarchy/system-setup.sh` — installs the udev rules in
-   `platforms/omarchy/system/udev/` into `/etc/udev/rules.d` and reloads udev. Idempotent.
+   `platforms/omarchy/system/udev/` into `/etc/udev/rules.d` and reloads udev, and the logind
+   drop-ins in `platforms/omarchy/system/logind/` into `/etc/systemd/logind.conf.d` and reloads
+   logind. Idempotent.
 
 ## Restoring on a DGX OS machine (GB10)
 
@@ -218,6 +220,10 @@ Omarchy (`platforms/omarchy/`):
   without root, in both normal and bootloader (DFU) mode. `dfu-util` in the package set is the
   command-line fallback if a browser firmware update fails. Copied into `/etc`, not symlinked,
   since udev can read rules before `/home` is mounted.
+- `system/logind/30-lid-external-power.conf`, installed by `system-setup.sh` — on AC power a
+  closed lid never suspends. With the lid shut at the desk, turning the external OLED off (to
+  avoid burn-in) makes logind stop counting the laptop as docked and suspend it, killing
+  long-running background sessions. On battery, closing the lid still suspends.
 - `packages/{pacman.txt,aur.txt}` — the curated set of software to install beyond stock Omarchy,
   hand-reviewed rather than a raw diff of everything explicitly installed on any one machine.
   `install-packages.sh` installs them through Omarchy's own CLI. `audit-installed.sh` prints what's
