@@ -21,13 +21,13 @@
       ],
       "right": [
         {
+          "id": "omarchy.tailscale"
+        },
+        {
           "id": "omarchy.tray"
         },
         {
           "id": "omarchy.keyboard-layout"
-        },
-        {
-          "id": "omarchy.tailscale"
         },
         {
           "id": "omarchy.agents"
