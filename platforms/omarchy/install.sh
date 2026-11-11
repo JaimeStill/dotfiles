@@ -52,6 +52,24 @@ ln -sf "$platform_dir/bin/omarchy-font-size-set" "$HOME/.local/bin/omarchy-font-
 # Retired: Super + L uses the stock layout toggle again (floating included).
 rm -f "$HOME/.local/bin/omarchy-workspace-layout-tiling-toggle"
 
+# Agent Insights replaces the stock omarchy.agents bar widget (shell.json's bar
+# layout names it). Last and non-fatal: offline or with no running shell, the rest
+# of this script still runs, and a re-run finishes the install. A symlinked folder
+# is a local dev checkout and is left alone.
+insights_dir="$HOME/.config/omarchy/plugins/jaimestill.agent-insights"
+insights_url="https://github.com/JaimeStill/omarchy-agent-insights.git"
+if [[ -L $insights_dir ]]; then
+  echo "Agent Insights is a dev symlink ($(readlink "$insights_dir")); skipping."
+elif [[ -d $insights_dir/.git ]]; then
+  omarchy plugin update jaimestill.agent-insights --yes ||
+    echo "WARN: Agent Insights update failed; re-run install.sh later." >&2
+elif [[ -e $insights_dir ]]; then
+  echo "WARN: $insights_dir exists but is not a git checkout; leaving it alone." >&2
+else
+  omarchy plugin add "$insights_url" --yes ||
+    echo "WARN: Agent Insights not installed (offline, or no running shell?); re-run install.sh." >&2
+fi
+
 echo "Omarchy dotfiles deployed."
 echo
 echo "Not automated by this script:"

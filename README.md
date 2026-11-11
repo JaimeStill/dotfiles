@@ -198,7 +198,10 @@ Omarchy (`platforms/omarchy/`):
 - `config/{alacritty,ghostty,foot}` — font, padding, and keybinding customizations layered on top
   of each terminal's `import`/`include` of the active Omarchy theme.
 - `config/kitty/platform.conf` — hides kitty's title bar (Hyprland tiles).
-- `config/omarchy/shell.json` — bar clock format.
+- `config/omarchy/shell.json` — bar clock format, and the bar uses `jaimestill.agent-insights`
+  in place of the stock `omarchy.agents` widget. `install.sh` installs that plugin from
+  `github.com/JaimeStill/omarchy-agent-insights` (or updates it). It is the 4.5 Agents panel with
+  tokens by day, tokens by model, and all-time totals restored.
 - `config/omarchy/hooks/post-update.d/keep-agents-native.hook` — the only custom Omarchy hook on
   this system. Keeps `claude` (and `codex`, unused today but may see use later) installed natively
   rather than mise-managed, undoing any re-adoption a migration causes. Omarchy's own
